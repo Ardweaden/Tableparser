@@ -6,7 +6,7 @@ Tableparser is a simple tool for converting flat JSON objects into trees and ren
 
 It can also convert flat JSON objects into [jqTree](https://mbraak.github.io/jqTree/) compatible objects. 
 
-Tableparser will automatically calculate the `colspan` and `width` values of the `<th>` tags to produce a rectangular array.
+Tableparser will automatically calculate the `colspan` and `width` values of the `<th>` tags to produce a rectangular table.
 
 ## Instructions
 ### Basic Example
@@ -80,7 +80,7 @@ Returns tree as a HTML table in the form of a string.
 Returned HTML table consists of `<tr>` and `<th>` tags. It is of rectangular shape and thus also inludes empty fields, which have a class `empty`. The leaves, i.e. the values of the branches, have a class `value`.
 
 #### Example of Removing Nodes/Branches
-Passing node names into the categories parameter will remove the named node and all its children. Taking the previous example, we will remove the nodes `1.3` and `"1.4.2.1.2"`.
+Passing node names into the categories parameter will remove the named node and all its children. Taking the previous example, we will remove the nodes `1.3` and `1.4.2.1.2`.
 ```
 tableString = createTableFromJSON(data,"/","",["1.3","1.4.2.1.2"]);
 $("#myTable").append(tableString);
