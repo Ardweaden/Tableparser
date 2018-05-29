@@ -429,6 +429,14 @@ function sortWithIndices(toSort) {
   return toSort;
 }
 
+function createTableFromTree(tree) {
+  var e = tableFromTreeWithColspan([tree]);
+  var ta = rectangulateArray(e[0]);
+  var cm = rectangulateArray(e[1]);
+  var wm = calculateWidth(ta);
+  return tableFromArray(ta,cm,wm)
+}
+
 
 function createTableFromJSON(data,delimiter,additional_delimiter,categories,subcategories) {
   var tree = parseTree(data,delimiter,additional_delimiter,categories,subcategories);
